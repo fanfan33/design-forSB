@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="js/iscroll.js" ></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<!--<div class="scroll">-->
+				<ul>
+				
+				</ul>
+			<!--</div>-->
+			
+		</div>
+	</body>
+	<script>
+		
+		for (var i=0;i<100;i++) {
+			var content = $("<li class='g"+i+"'>list"+i+"</li>");
+			$("#wrapper ul").append(content);
+		}
+		
+		var myScroll = new iScroll("wrapper",{
+			mouseWheel: true,
+			scrollbars: true
+		});
+		
+//		myScroll.scrollTo(0, -100, 1000);
+		
+		
+	</script>
+</html>

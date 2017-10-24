@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border test page</title>
+    <style>
+        body{background: #fff;}
+		/*.flatballoon{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            top: 60px
+        }
+        .flatballoon:after{
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-color: #ccc transparent transparent;
+            border-width: 10px;
+            bottom: -20px;
+            right:40px;
+        }
+        .flatballoon:before{
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-color: white transparent transparent;
+            border-width: 10px;
+            bottom: -19px;
+            right:40px;
+            z-index: 9;
+        }*/
+        
+        .borderballoon{
+            width: 200px;
+            height: 800px;
+            background-image: url('');
+            border-radius: 5px;
+            position: relative;
+            top: 30px;
+        }
+        .borderballoon:after{
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-color: lightgreen transparent transparent;
+            border-width: 10px;
+            bottom: -20px;
+            right:40px;
+        }
+        
+
+    </style>
+</head>
+<body>
+			  data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSL+Ql8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjAwcHgiIHZpZXdCb3g9IjAgMCA2NDAgNDAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2NDAgNDAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Y2lyY2xlIGN4PSI0MDkuNjYyIiBjeT0iMzUxLjQ3NCIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIzNDEuMTY5IiBjeT0iMzMwLjA0MSIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIzMTIuMzAxIiBjeT0iMzA5LjM0NSIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyODMuNzEyIiBjeT0iMzI1LjI2IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjIwMi44NzIiIGN5PSIzNDUuMTUiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMTYyLjQ4OSIgY3k9IjI3Ny43NjIiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMTYyLjkzIiBjeT0iMjUzLjc0IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE3OS40MTkiIGN5PSIyMjcuNTA4IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE4MS4zOTIiIGN5PSIxOTkuNzQyIiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE3OS45NzgiIGN5PSIxNzcuNjQ1IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE5OS40MTkiIGN5PSIxNDYuMjY1IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjIwOC4zODkiIGN5PSIxMjQuMzY2IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjI0MS4zMzYiIGN5PSI5OC43OTEiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMjY3LjYwMiIgY3k9Ijc2LjY4MiIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyODguNDY5IiBjeT0iMjg2Ljg3IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjI1OC44NzgiIGN5PSIyNzUuODIzIiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjI0MC41NDYiIGN5PSIyODYuMTI1IiByPSIzLjIzNCIvPiA8Y2lyY2xlIGN4PSIzNjUuNzE0IiBjeT0iMzQxLjYzOCIgcj0iMy4yMzQiLz4gPC9zdmc+
+	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSLlm77lsYJfMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYwMHB4IiB2aWV3Qm94PSIwIDAgNjQwIDQwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQwIDQwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGNpcmNsZSBjeD0iNDA5LjY2MiIgY3k9IjM1MS40NzQiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMzQxLjE2OSIgY3k9IjMzMC4wNDEiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMzEyLjMwMSIgY3k9IjMwOS4zNDUiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMjgzLjcxMiIgY3k9IjMyNS4yNiIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyMDIuODcyIiBjeT0iMzQ1LjE1IiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE2Mi40ODkiIGN5PSIyNzcuNzYyIiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjE2Mi45MyIgY3k9IjI1My43NCIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIxNzkuNDE5IiBjeT0iMjI3LjUwOCIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIxODEuMzkyIiBjeT0iMTk5Ljc0MiIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIxNzkuOTc4IiBjeT0iMTc3LjY0NSIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIxOTkuNDE5IiBjeT0iMTQ2LjI2NSIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyMDguMzg5IiBjeT0iMTI0LjM2NiIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyNDEuMzM2IiBjeT0iOTguNzkxIiByPSIzLjIzNCIvPjxjaXJjbGUgY3g9IjI2Ny42MDIiIGN5PSI3Ni42ODIiIHI9IjMuMjM0Ii8+PGNpcmNsZSBjeD0iMjg4LjQ2OSIgY3k9IjI4Ni44NyIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyNTguODc4IiBjeT0iMjc1LjgyMyIgcj0iMy4yMzQiLz48Y2lyY2xlIGN4PSIyNDAuNTQ2IiBjeT0iMjg2LjEyNSIgcj0iMy4yMzQiLz4gPGNpcmNsZSBjeD0iMzY1LjcxNCIgY3k9IjM0MS42MzgiIHI9IjMuMjM0Ii8+IDwvc3ZnPg=="/>
+        <div class="borderballoon"></div>
+        <!--<div class="flatballoon"></div>-->
+        <script src="js/util.js"></script>
+		<script>
+			
+//			var c  = [];
+//			var str = "1234"; 
+//			for(var ind in str){
+//				
+//				c.push(str[ind].charCodeAt())
+//			}
+////			console.info(c);
+//			
+//			
+//			var list = ["1","2","3","4"];
+//			var checkDate = {};
+//			for (var ind in list) {
+//				var obj = list[ind];
+//				checkDate[obj.checkDate] = obj;
+//			}
+//			
+//			
+//			var arr=[];
+//			for (var i=0;i<20;i++) {
+//				arr[i]={}
+//				if(arr[i][obj.dataStr]){
+//					
+//				}
+//				
+//			}
+////			console.log(box);
+//			var box= new Date();
+//			var year = box.getFullYear();
+//			var month = box.getMonth()+1;
+//			var day = box.getDate();
+//			
+//			console.log(year+"/"+month+"/"+day);
+//			
+//			var arr=[];
+//			for (var i=0;i<18;i++) {
+//				arr[i] = formatTime(box.setDate(day+i));
+//				
+//			}
+//			for (var j=0;j<arr.length;j++) {
+//				console.log(arr[j]);
+//			}
+
+			    var now = new Date();
+			    now.setDate(now.getDate() - 1)
+			 
+//			console.log(now.getDate());
+
+			var arr=[1,2,3];
+			var _Arr=[];
+			console.log(arr.concat(_Arr));
+			
+		</script>
+</body>
+</html>

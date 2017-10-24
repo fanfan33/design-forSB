@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+			}
+			
+			img.wrap {
+				width: 100%;
+				position: relative;
+			}
+			
+			.mark img {
+				position: absolute;
+				width: 0.2rem;
+			}
+			
+			img.g1 {left: 7.2rem;top: 4.4rem;}
+			img.g2 {left: 5.7rem;top: 4.4rem;}
+			img.g3 {left: 5.3rem;top: 4.2rem;}
+			img.g4 {left: 5.0rem;top: 4.25rem;}
+			img.g5 {left: 5.0rem;top: 4.0rem;}
+			img.g6 {left: 5.0rem;top: 4.25rem;}
+		</style>
+		<script type="text/javascript">
+			var oSize = 40;
+			var Rem = function() {
+				oSize = document.documentElement.clientWidth / 7.5;
+				if(oSize > 100) {
+					oSize = 100;
+				}
+				document.documentElement.style.fontSize = oSize + "px";
+			};
+			Rem();
+			window.addEventListener('resize', Rem, false);
+		</script>
+	</head>
+
+	<body>
+		<img class="wrap" src="img/banner2.png" />
+		<div class="mark">
+			
+		</div>
+
+	</body>
+	<script>
+		for(var i = 0; i < 21; i++) {
+			var _img = $("<img class='g" + i + "' src='img/unmark.png' />");
+			$(".mark").append(_img);
+		}
+
+		var a = "g2";
+		var b = a.replace(/[^0-9]/ig, "");
+	</script>
+
+</html>

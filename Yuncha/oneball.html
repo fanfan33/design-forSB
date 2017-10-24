@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="300"></canvas>
+</body>
+<script>
+
+
+    function RotateBall(opt) {
+        for (var key in opt) {
+            this[key] = opt[key];
+        }
+        this.init();
+    }
+    RotateBall.prototype = {
+        init: function () {
+            this.loop();
+        },
+        loop:function(){
+            var self = this;
+            this.timer = setInterval(function () {
+                self.ctx.clearRect(0,0,self.ctx.canvas.width,self.ctx.canvas.height);
+                self.start += 0.01 * Math.PI;
+                //绘制
+                self.drawBigCircle();
+                self.drawSmallCircles();
+            }, 20);
+        },
+        drawBigCircle: function () {
+            var ctx = this.ctx;
+            ctx.beginPath();
+            ctx.arc(this.bigX, this.bigY, this.bigRadius, 0, 2 * Math.PI);
+            ctx.strokeStyle="#FF6000";
+            ctx.stroke();
+        },
+        drawSmallCircles: function () {
+            var bigRadius = this.bigRadius;
+            var bigX = this.bigX;
+            var bigY = this.bigY;
+           
+            var startRadian = this.start;
+
+            var b = bigRadius * Math.cos(startRadian);
+            var h = bigRadius * Math.sin(startRadian);
+
+            var smallX = bigX + b;
+            var smallY = bigY + h;
+
+            this.drawSmallCircle(smallX, smallY);
+  
+        },
+        drawSmallCircle: function (smallX, smallY) {
+
+            var ctx = this.ctx;
+            ctx.save()
+            ctx.beginPath();
+            ctx.arc(smallX, smallY, this.smallRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = '#FF6000';
+            ctx.fill();
+            ctx.restore();
+        }
+    };
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var obj = {
+        ctx: ctx,
+        bigX: 100,
+        bigY: 100,
+        bigRadius: 100,
+        smallRadius: 5,
+        start: 0
+    }
+    var rball = new RotateBall(obj);
+</script>
+</html>

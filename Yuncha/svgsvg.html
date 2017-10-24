@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--<svg xmlns="http://www.w3.org/2000/svg" version="1.1">  
+		  <defs>  
+		    <filter id="f2" x="0" y="0" width="200%" height="200%">  
+		      <feOffset result="offOut" in="" dx="10" dy="10" />  
+		      <feFlood flood-color="#B88A2C"/>
+		      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />  
+		      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />  
+		    </filter>  
+		  </defs>  
+		  <rect width="90" height="90" fill="red" filter="url(#f2)" />  
+		</svg>  -->
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<defs>
+		    <filter id="drop-shadow">
+		        <feGaussianBlur result="blurOut" stdDeviation="10"/>
+		        <feOffset dx="12" dy="12" result="offsetblur"/>
+		        <feFlood flood-color="rgba(243,206,128,0.8)"/>
+		        <feComposite in2="offsetblur" operator="in"/>
+		        <feMerge>
+		            <feMergeNode in="SourceGraphic" in2="offOut"/><feMergeNode/>
+		        </feMerge>
+		    </filter></defs>
+		    <rect width="90" height="90" fill="red" filter="url(#drop-shadow)" />
+		</svg>           
+	</body>
+
+</html>

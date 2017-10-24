@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.topThree{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				text-align: center;
+				justify-content: space-between;
+			}
+			.topThree>div{
+				width: 33%;
+				
+			}
+			.topThree .imgCon{
+				border: 1px solid #000;
+				background: url(img/second.png) center no-repeat;
+				background-size: 70%;
+			}
+			.topThree .imgFirst{
+				background-image: url(img/first.png);
+			}
+			.topThree .imgThird{
+				background-image: url(img/third.png);
+			}
+			.topThree .imgCon img{
+				margin-top: 60px;
+				width: 50%;
+				border-radius: 50%;
+				border: 1px solid #000;
+			}
+			.topThree .imgFirst img{
+				/*width: 60%;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topThree">
+			<div class="second">
+				<div class="imgCon">
+					<img src="img/junyong04.jpg"/>
+				</div>
+				<p>张三</p>
+				<p>1000</p>
+			</div>
+			<div class="first">
+				<div class="imgCon imgFirst">
+					<img src="img/junyong04.jpg"/>
+				</div>
+				<p>李四</p>
+				<p>2000</p>
+			</div>
+			<div class="third">
+				<div class="imgCon imgThird">
+					<img src="img/junyong04.jpg"/>
+				</div>
+				<p>王二麻子</p>
+				<p>1500</p>
+			</div>
+			<!--<div class="first">
+				<img class="topOne" src="img/first.png"/>
+				<p>李四</p>
+				<p>2000</p>
+			</div>
+			<div class="third">
+				<img src="img/third.png"/>
+				<p>王二麻子</p>
+				<p>1500</p>
+			</div>-->
+		</div>
+	</body>
+</html>
+<script>
+	var box=new Date(new Date().getTime()).getMonth();
+	var box1=new Date(Date.now()).getMonth();
+	console.log(box+"======="+box1);
+</script>
