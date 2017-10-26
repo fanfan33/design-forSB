@@ -4,89 +4,13 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/default.css"/>
-		<style type="text/css">
-			body{background:#ffe;background: url(img/timg.jpg);}
-			button{
-				position: absolute;
-				background: none;
-				border: none;
-				padding: 8px 15px;
-				border-radius: 5px;
-				box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset !important;
-				color: white;
-			}
-			button:hover{
-				cursor: pointer;
-			}
-			.bt1{
-				text-align: center;
-				width: 100px;
-				left: 50%;
-				/*top: 50%;*/
-				margin-left: -50px;
-				margin-top: 20px;
-			}
-			.bt2{
-				left: 0;
-				top: 0;
-			}
-			.bt3{
-				right: 0;
-				top: 0;
-			}
-			.bt4{
-				right: 0;
-				bottom: 0;
-			}
-			.bt5{
-				left: 0;
-				bottom: 0;
-			}
-			@keyframes redPulse{
-				from { background-color: #D23206; box-shadow: 0 0 9px #333; }
-				50% { background-color: #E03101; box-shadow: 0 0 18px #91bd09; }
-				to { background-color: #BD330D; box-shadow: 0 0 9px #333; }
-			}
-			@-webkit-keyframes redPulse {
-				from { background-color: #D23206; -webkit-box-shadow: 0 0 9px #333; }
-				50% { background-color: #E03101; -webkit-box-shadow: 0 0 18px #91bd09; }
-				to { background-color: #BD330D; -webkit-box-shadow: 0 0 9px #333; }
-			}
-			button {
-				animation-name: redPulse;
-				animation-duration: 3s;
-				animation-iteration-count: infinite;
-				
-			  	-webkit-animation-name: redPulse;
-			  	-webkit-animation-duration: 2s;
-			  	-webkit-animation-iteration-count: infinite;
-			}
-			.likeBt{
-				width: 50%;
-				margin: 100px auto 20px;
-			}
-			.bigButton{
-				padding: 20px 50px;
-				font-size: 48px;
-				border-radius: 5px;
-				color: white;
-				text-align: center;
-				cursor: pointer;
-				
-				animation-name: redPulse;
-				animation-duration: 3s;
-				animation-iteration-count: infinite;
-				
-			  	-webkit-animation-name: redPulse;
-			  	-webkit-animation-duration: 3s;
-			  	-webkit-animation-iteration-count: infinite;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<script src="js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="js/functions_dev.js" ></script>
 		<script type="text/javascript" src="js/garden_dev.js" ></script>
 	</head>
 	<body>
+		<audio src="music/songForU.mp3" autoplay="autoplay">您的浏览器不支持audio，请使用其他浏览器</audio>
 		<div class="wrap">
 			<div class="main">
 				<div class="sayYes" style="text-align: center;font-size: 36px;margin: 100px 0;">
@@ -127,21 +51,17 @@
 		
 		$(".bt").mouseover(function(){
 			$(this).hide();
-//			if (index == 1){
-//				if (confirm("确定吗？？？")) {
-//				
-//				} else{
-//					
-//					return false;
-//				}
-//			}
-				index ++;
-				console.log(index);
-				
-				$(".bt"+index).show();
-//				if (index > 5) {
-//					window.close();
-//				}
+			index ++;
+			console.log(index);
+			
+			$(".bt"+index).show();
+			if (index > 5) {
+				var con = $('<p class="bigButton">喜欢</p>');
+				$(".likeBt").append(con);
+				$(".bigButton").click(function(){
+					startHeart();
+				})
+			}
 			
 			
 		})
@@ -161,6 +81,7 @@
 			msg.id = "errorMsg";
 			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
 			document.body.appendChild(msg);
+			$("#errorMsg").css("margin-top","100px");
 			$("#code").css("display", "none")
 			$("#copyright").css("position", "absolute");
 			$("#copyright").css("bottom", "10px");
@@ -168,23 +89,26 @@
 		} else {
 			
 			$(".bigButton").click(function(){
-				$(".wrap").hide();
-				$("#loveHeart").show();
-				adjustWordsPosition();
-				startHeartAnimation();
-				console.log("hello")
-				
-				timeElapse(together, displayMode);
-				setInterval(function () {
-					timeElapse(together, displayMode);
-	//				console.log("momomomom")
-				}, 500);
-	
-				adjustCodePosition();
-				$("#code").typewriter();
+				startHeart();
 			})
 
 			
+		}
+		function startHeart(){
+			$(".wrap").hide();
+			$("#loveHeart").show();
+			$("body").css("background","url(img/timg.jpg)")
+			adjustWordsPosition();
+			startHeartAnimation();
+			console.log("hello")
+			
+			timeElapse(together, displayMode);
+			setInterval(function () {
+				timeElapse(together, displayMode);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
 		}
 	</script>
 </html>
