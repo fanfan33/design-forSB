@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/ejs.min.js" ></script>
+	</head>
+	<body>
+		<div id="output"></div>
+		<script id="users" type="text/template">
+	        <% if (names.length) { %>
+	            <ul>
+	                <% names.forEach(function(name,index){ %>
+	                    <li>
+	                        <%= index+1 + name %>
+	                    </li>
+	                <% }) %>
+	            </ul>
+	            <% } %>
+	    </script>
+	</body>
+	<script>
+		var users = document.getElementById('users').innerHTML;
+        var names = ['loki', 'tobi', 'jane'];
+        var html = ejs.render(users, { names: names });
+        document.getElementById('output').innerHTML = html;
+	</script> 
+	
+</html>

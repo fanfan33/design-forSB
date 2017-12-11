@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/modal.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	</head>
+
+	<body>
+		<!-- The example -->
+		<div class="wrap">
+			<a href="#modal-one" class="btn btn-big" data-anijs="if:click, do: $addClass open, to:.modal;
+       if: click, on: .close, do: $removeClass open, to: $closest target | .modal">
+				Click me!!
+				</a>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-header">
+					<h2>Are you creative?</h2>
+					<a href="#" class="btn-close close" aria-hidden="true">×</a>
+				</div>
+				<div class="modal-body">
+					<p>You need to try
+						<a href="https://anijs.github.io/" target="_blanck">AniJS</a> :D</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn close">Nice!</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!--<script type="text/javascript" src="AniJS/dist/anijs.js"></script>-->
+	<script src="https://anijs.github.io/lib/anijs/anijs.js"></script>
+	<script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom.js"></script>
+
+</html>

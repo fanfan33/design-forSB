@@ -1,0 +1,108 @@
+<!-- webkfa.com -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>css3</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.nav{width: 100%;height: 50px;background-color: #eee;}
+			input{float: right;}
+			#webkfaid{
+				width: 100px;
+				height: 200px;
+				border: 1px solid #000;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -50px;
+				box-sizing: border-box;
+				transform: translateY(-200px);
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #cfcfcf;
+			}
+			.box1{
+				border: 1px solid #000;
+			}
+			ul>li{
+				text-align: center;
+			}
+			div.collapse{
+				display: none;
+			}
+			div.collapse.in{
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="nav">
+			<input class="collapse1" data-anijs="if: click, do: bounceIn animated , to: .box1" type="button" value="往下" onclick="xia(0);" />
+			<input type="button" value="往上" onclick="shang(-200);" />
+		</div>
+		<div id="webkfaid">
+			<ul>
+				<li data-anijs="if: click, do: flip animated, to: .box, after: $removeAnim" >list1</li>
+				<li>list2</li>
+				<li>list3</li>
+				<li data-anijs="if: click, do: swing animated, to: .box, after: $removeAnim">list4</li>
+			</ul>
+		</div>
+		<div class="box flip animated">
+			this is animate css & anijs 
+		</div>
+		<div class="box1 collapse">
+			<ol>
+				<li>gagag</li>
+				<li>gagag</li>
+				<li>gagag</li>
+				<li>gagag</li>
+				<li>gagag</li>
+				<li>gagag</li>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function(){
+				$(".box").removeClass("flip")
+			},1000)
+			
+			var ifCheck = false;
+			$(".collapse1").click(function(){
+				if (ifCheck == false) {
+					console.log(ifCheck);
+					$(".collapse").addClass("in");
+					ifCheck = true
+				} else{
+					$(".collapse").removeClass("in");
+					ifCheck = false
+				}
+				
+			})
+			
+			function xia(sum) {
+				var obj = document.getElementById("webkfaid");
+				obj.style.transition = "-webkit-transform 500ms ease-out";
+				obj.style.webkitTransform = "translate(0px," + sum + "px) scale(1) translateZ(0px)";
+			}
+
+			function shang(sum) {
+				var obj = document.getElementById("webkfaid");
+				obj.style.transition = "-webkit-transform 500ms ease-out";
+				obj.style.webkitTransform = "translate(0px," + sum + "px) scale(1) translateZ(0px)";
+			}
+		</script>
+		<script type="text/javascript" src="AniJS/dist/anijs.js" ></script>
+	</body>
+
+</html>

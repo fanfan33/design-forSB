@@ -1,0 +1,28 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;color: black;}
+.clear{clear: both;}
+ul li,ul{list-style-type: none;}
+html{
+	font-family: "微软雅黑";
+}
+.footerBtn{
+	color: white;
+	background: #333333;
+	width: 100%;
+	text-align: center;
+	padding: 15px 0;
+}
+.footerBtn p{
+	padding: 5px 0;
+}
+.footerBtn p span{
+	padding: 0 5px;
+}
+.footerBtn p.health{
+	padding-bottom: 10px;
+}
+.footerBtn p.footer{
+	font-size: 14px;
+	padding: 3px;
+}

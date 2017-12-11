@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quick Start Template</title>
+	  <!-- AniCollection.css library -->
+    <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
+    <style type="text/css">
+    	header{
+    		width: 500px;
+    		margin: auto;
+    		height: 300px;
+    		border: 1px solid #000;
+    	}
+    	nav{
+    		border: 1px solid #000;
+    		/*text-align: center;*/
+    	}
+    	#main{
+    		width: 500px;
+    		margin: auto;
+    		height: 300px;
+    		border: 1px solid #000;
+    	}
+    	footer{
+    		width: 500px;
+    		margin: auto;
+    		height: 300px;
+    		border: 1px solid #000;
+    	}
+    	.collapse{
+    		display: none;
+    	}
+    	.collapse.open{
+    		display: block;
+    	}
+    </style>
+</head>
+<body data-anijs="if: scroll, do: fadeInUp animated">
+    <!--Simple sentence-->
+    <header class="header" data-anijs="if: click ,do: flipInY animated">
+        header (Click here)
+    </header>
+    <nav data-anijs="if: click ,do: $addClass open fadeInUp animated, to: #main;if: click,on: .header, do: $removeClass open, to: #main">
+        点击-->main 添加open样式显示， 动画上来<br/>
+        点击作用于.header ，移除open，main消失<br/>
+        <strong>anijs-helper-dom提供使用$addClass $removeClass ...</strong>
+    </nav>
+    <div id="main" class="collapse" data-anijs="if: mouseleave, do: swing animated">
+    	<p>	sadsadf</p>
+    	<p>sdsadfasf</p>
+    	<p>	sadsadf</p>
+    	<p>sdsadfasf</p>
+        Main (MouseOver)
+    </div>
+    <button data-anijs="if: click, do: bounce animated">按钮</button>
+    <button data-anijs="if: click, do: flip animated, after: $fireOnce">按钮</button>
+    <footer data-anijs="if:click, do: hinge animated, after: removeAnim">
+        footer (Click here)
+    </footer>
+   <!--AniJS core library-->
+  <!--<script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script>--> 
+  <script src="js/anijs.js" type="text/javascript" charset="utf-8"></script>
+  
+  <!-- Include to use $addClass, $toggleClass or $removeClass -->
+  <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+
+   <!--The scrollreveal helper-->
+  <script src="https://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal-min.js"></script>
+  </body>
+  <script type="text/javascript">
+  </script>
+</html>

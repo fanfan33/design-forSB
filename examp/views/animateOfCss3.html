@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.pic i{
+			display: block;
+			width: 10px;
+			height: 40px;
+			float: left;
+			margin: 0 2px;
+			background-color: lightgreen;
+			-webkit-transform: scaleY(0.4);
+			    -ms-transform: scaleY(0.4);
+			        transform: scaleY(0.4);
+			-webkit-animation: animate 1.2s infinite;
+			        animation: animate 1.2s infinite;
+		}
+		@-webkit-keyframes animate{
+			0%,40%,100%{
+				-webkit-transform: scaleY(0.4);
+				        transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1);
+				        transform: scaleY(1);
+			}
+		}
+		@keyframes animate{
+			0%,40%,100%{
+				-webkit-transform: scaleY(0.4);
+				        transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1);
+				        transform: scaleY(1);
+			}
+		}
+		.pic i:nth-child(2){
+			-webkit-animation-delay: 0.1s;
+			        animation-delay: 0.1s;
+		}
+		.pic i:nth-child(3){
+			-webkit-animation-delay: 0.2s;
+			        animation-delay: 0.2s;
+		}
+		.pic i:nth-child(4){
+			-webkit-animation-delay: 0.3s;
+			        animation-delay: 0.3s;
+		}
+		.pic i:nth-child(5){
+			-webkit-animation-delay: 0.4s;
+			        animation-delay: 0.4s;
+		}
+	</style>
+	<body>
+		<div class="pic">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</body>
+	<script>
+		
+		
+		
+		
+		// 找重复项最多的字符个数
+		var str = 'g21ss4aeba_ersb43sgnnsssstht6sss60snnsj8resw0_ss';
+		// split : 将字符串转化为数组
+		// sort : 对数组排序，ASCII
+		// join : 将数组转化为字符串
+		var str_new = str.split('').sort().join('');
+		// 匹配字符，且重复这个字符，重复次数至少一次。
+		var regexp = /(\w)\1+/g;
+		var index = 0;
+		var value = '';
+		str_new.replace(regexp, function($0, $1) {
+		    if (index < $0.length) {
+		        index = $0.length;
+		        value = $1;
+		    }
+		});
+
+
+		//删除重复元素
+		var arr = str.split("");
+		function uniqueIndexOf(arr) {
+			var result =  [];
+			arr.forEach(function(key,index){
+				if (result.indexOf(key) == -1) {
+					result.push(key);
+				}
+			})
+			return result
+		}
+		
+		
+		//利用键的唯一性
+		function unique(arr) {
+			var result = [] ;
+			var temp = [] ;
+			for (var ind in arr) {
+				temp[arr[ind]] = 1;
+			}
+			for (var i in temp) {
+				result.push(i);
+			}
+			return result;
+		}
+		console.log(unique(arr));
+		console.log(uniqueIndexOf(arr));
+
+//		console.log('重复项最多的字符是：' + value + '，个数是：' + index);
+	</script>
+</html>
